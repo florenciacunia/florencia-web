@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florencia Acuña · Automatización con IA para pymes</title>
+  <meta name="description" content="Soy Florencia Acuña, licenciada en Administración. Automatizo tareas administrativas repetitivas de pymes con IA: facturas de proveedores, pedidos, cobranzas y reportes.">
+  <meta name="theme-color" content="#F9C4D0">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Florencia Acuña · Automatización con IA para pymes">
+  <meta property="og:description" content="Menos carga manual, más control de tu administración. Diagnóstico gratuito de 30 minutos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23B8102D'/%3E%3Cpath d='M22 46V18h22v7H30v4h12v7H30v10z' fill='%23FFF7F5'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="Florencia Acuña, inicio">
+        <span class="brand__mark" aria-hidden="true">F</span>
+        <span class="brand__name">Florencia Acuña</span>
+      </a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#ayuda">Cómo te ayudo</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="#conocimientos">Conocimientos</a>
+      </nav>
+      <a class="btn btn--sm" href="#contacto">Hablemos</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="from-li" id="from-li" hidden>Hola, te veo llegar desde LinkedIn. Bienvenida/o.</p>
+          <h1>Tu administración, sin tanta carga manual.</h1>
+          <p class="lead">Soy Florencia, licenciada en Administración. Diseño automatizaciones con IA para pymes: facturas de proveedores, pedidos, cobranzas y reportes, siempre con una persona que revisa lo dudoso.</p>
+          <div class="cta-row">
+            <a class="btn" href="#contacto" data-booking>Agendar diagnóstico gratis</a>
+            <a class="btn btn--ghost" href="#" data-linkedin target="_blank" rel="noopener">Ver mi LinkedIn</a>
+          </div>
+          <p class="fine">Son 30 minutos, sin cargo y sin compromiso.</p>
+        </div>
+
+        <figure class="demo" id="demo" aria-label="Demostración: una factura que llega por mail queda cargada en la planilla">
+          <span class="stamp" aria-hidden="true">Demo con<br>datos de ejemplo</span>
+
+          <div class="demo__col">
+            <p class="demo__label">Llega por mail</p>
+            <div class="paper">
+              <div class="paper__head">
+                <b>Factura A</b>
+                <span>Factura_4217.pdf</span>
+              </div>
+              <dl class="paper__rows">
+                <div data-src="0"><dt>Proveedor</dt><dd>Repuestos del Sur S.A.</dd></div>
+                <div data-src="1"><dt>N.º</dt><dd>0004-00004217</dd></div>
+                <div data-src="2"><dt>Total</dt><dd>$ 1.284.500,00</dd></div>
+                <div data-src="3"><dt>Vence</dt><dd>12/10/2026</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="demo__arrow" aria-hidden="true">
+            <svg viewBox="0 0 48 24" width="48" height="24"><path d="M2 12h40m-9-8 9 8-9 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div class="demo__col">
+            <p class="demo__label">Queda cargada</p>
+            <div class="sheet" role="table" aria-label="Planilla de cuentas a pagar">
+              <div class="sheet__row sheet__row--head" role="row">
+                <span role="columnheader">Proveedor</span><span role="columnheader">N.º</span><span role="columnheader">Total</span><span role="columnheader">Vence</span>
+              </div>
+              <div class="sheet__row is-old" role="row">
+                <span>Lubricantes Norte</span><span>0002-0981</span><span>$ 312.000</span><span>08/10</span>
+              </div>
+              <div class="sheet__row is-flag" role="row">
+                <span>Taller Andina</span><span>0001-5530</span><span>$ 96.400</span><span>15/10</span>
+                <em>Para revisar: no coincide con la orden</em>
+              </div>
+              <div class="sheet__row is-new" role="row">
+                <span data-cell="0" data-text="Repuestos del Sur S.A."></span>
+                <span data-cell="1" data-text="0004-4217"></span>
+                <span data-cell="2" data-text="$ 1.284.500"></span>
+                <span data-cell="3" data-text="12/10"></span>
+              </div>
+            </div>
+            <p class="chip" id="demo-chip" aria-live="polite">Vence en 7 días · aviso programado</p>
+          </div>
+
+          <button class="replay" id="replay" type="button">Ver de nuevo</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="sec sec--pinklight" id="sobre-mi">
+      <div class="wrap about">
+        <figure class="portrait">
+          <div class="portrait__ph" aria-hidden="true"><span>FA</span></div>
+          <img src="assets/florencia.jpg" alt="Florencia Acuña" width="640" height="800" loading="lazy" onerror="this.remove()">
+        </figure>
+        <div class="about__copy">
+          <h2>Vengo de adentro de la administración</h2>
+          <p>Me recibí de Licenciada en Administración en la UNLP en 2025. Entre 2020 y 2025 fundé y dirigí mi propio negocio, así que sé lo que es decidir con poco tiempo y pocos recursos.</p>
+          <p>Hoy llevo cuentas a pagar en el sector automotriz: cargo facturas, hablo con proveedores y conozco las excepciones que ningún manual cuenta. Esa es la tarea que más se repite en una pyme, y la que mejor sé automatizar.</p>
+          <p>Por eso no te ofrezco «IA» en general. Te ofrezco sacarte de encima lo que se come tus semanas, y mostrarte cuántas horas recuperás.</p>
+          <p class="about__where">Vivo en Viedma, Río Negro, y trabajo en remoto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO TE AYUDO -->
+    <section class="sec" id="ayuda">
+      <div class="wrap">
+        <div class="sec__head">
+          <h2>Qué puedo sacarte de encima</h2>
+          <p class="sec__sub">Cinco tareas administrativas que se repiten todos los meses en casi cualquier pyme.</p>
+        </div>
+        <ul class="tasks">
+          <li>
+            <h3>Facturas de proveedores</h3>
+            <p>Llegan por mail en PDF y quedan cargadas en tu planilla o sistema, con los vencimientos avisados.</p>
+            <span class="tags">n8n, IA, Supabase</span>
+          </li>
+          <li>
+            <h3>Pedidos por WhatsApp</h3>
+            <p>El mensaje en texto libre se convierte en un pedido ordenado. Lo dudoso pasa por una persona antes de tocar nada.</p>
+            <span class="tags">n8n, WhatsApp, IA</span>
+          </li>
+          <li>
+            <h3>Cobranzas</h3>
+            <p>Recordatorios de vencimiento y registro de pagos recibidos, sin perseguir a nadie a mano.</p>
+            <span class="tags">n8n, mail, WhatsApp</span>
+          </li>
+          <li>
+            <h3>Conciliación bancaria</h3>
+            <p>Cruzo el extracto contra tus facturas y te marco solo las diferencias.</p>
+            <span class="tags">Python, SQL</span>
+          </li>
+          <li>
+            <h3>Reporte semanal</h3>
+            <p>Deuda con proveedores, vencimientos y caja, en tu mail o WhatsApp cada lunes.</p>
+            <span class="tags">Supabase, n8n</span>
+          </li>
+        </ul>
+        <p class="tasks__note">¿Tu tarea no está en la lista? Si se repite y sigue reglas, probablemente se puede automatizar. Lo vemos en el diagnóstico.</p>
+      </div>
+    </section>
+
+    <!-- COMO TRABAJO -->
+    <section class="sec sec--cherry" id="proceso">
+      <div class="wrap">
+        <div class="sec__head">
+          <h2>Cómo trabajamos juntos</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="steps__n" aria-hidden="true">1</span>
+            <h3>Diagnóstico de 30 minutos</h3>
+            <p>Me contás qué tarea te come más tiempo. Salís con una lista ordenada de qué automatizar primero.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">2</span>
+            <h3>Propuesta cerrada</h3>
+            <p>Alcance, plazo y precio antes de empezar. Con una estimación de las horas que vas a ahorrar.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">3</span>
+            <h3>Implementación y abono</h3>
+            <p>Lo construyo, lo probamos con tus datos reales y queda funcionando. Un abono mensual cubre el mantenimiento.</p>
+          </li>
+        </ol>
+        <div class="rules">
+          <p><b>Todo a tu nombre.</b> Las cuentas, los accesos y el código son tuyos.</p>
+          <p><b>Una persona decide.</b> Lo dudoso pasa por revisión humana antes de aplicarse.</p>
+          <p><b>Se mide.</b> Te muestro las horas ahorradas, no solo que «funciona».</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONOCIMIENTOS -->
+    <section class="sec" id="conocimientos">
+      <div class="wrap">
+        <div class="sec__head">
+          <h2>Con qué trabajo</h2>
+          <p class="sec__sub">Lo que uso todos los días y lo que estoy profundizando, dicho con claridad.</p>
+        </div>
+        <div class="skills">
+          <div>
+            <h3 class="skills__title">Uso a diario</h3>
+            <ul class="skills__list">
+              <li><b>n8n</b><span>Flujos de trabajo y agentes con IA que conectan tus mails, planillas y WhatsApp.</span></li>
+              <li><b>Supabase</b><span>Base de datos, usuarios y reglas de acceso para guardar y consultar tu información.</span></li>
+              <li><b>Vercel</b><span>Publicación de sitios y paneles web.</span></li>
+              <li><b>GitHub</b><span>Versionado del código, para que nada se pierda y todo sea tuyo.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="skills__title">Profundizando</h3>
+            <ul class="skills__list">
+              <li><b>Python</b><span>Limpieza de datos y lectura de PDFs.</span></li>
+              <li><b>SQL</b><span>Consultas y reportes sobre datos reales de la operación.</span></li>
+            </ul>
+            <h3 class="skills__title skills__title--second">Desde la administración</h3>
+            <ul class="skills__list">
+              <li><b>Cuentas a pagar</b><span>Circuito de facturas, vencimientos y relación con proveedores.</span></li>
+              <li><b>Gestión de un negocio propio</b><span>Cinco años al frente de mi emprendimiento.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="sec sec--pink" id="contacto">
+      <div class="wrap contact">
+        <div class="contact__copy">
+          <h2>Contame qué tarea querés sacarte de encima</h2>
+          <p>Respondo personalmente, normalmente en un día hábil. Si preferís, agendá directo el diagnóstico o escribime por LinkedIn.</p>
+          <ul class="links">
+            <li><a href="#" data-booking-link hidden>Agendar diagnóstico</a></li>
+            <li><a href="#" data-linkedin target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="#" data-email hidden></a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="form" novalidate>
+          <div class="field">
+            <label for="f-name">Nombre</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="120">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          </div>
+          <div class="field">
+            <label for="f-company">Empresa <span class="opt">(opcional)</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="160">
+          </div>
+          <div class="field">
+            <label for="f-message">¿Qué tarea repetitiva querés sacarte de encima?</label>
+            <textarea id="f-message" name="message" rows="5" required minlength="10" maxlength="2000"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label>No completar <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button class="btn" type="submit" id="submit">Enviar mensaje</button>
+          <p class="form__status" id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>© 2026 Florencia Acuña · Viedma, Río Negro</p>
+      <a href="#top">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
