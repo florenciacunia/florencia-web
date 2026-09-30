@@ -3,7 +3,7 @@
 window.SITE_CONFIG = {
   // Tu perfil de LinkedIn, por ejemplo: "https://www.linkedin.com/in/tu-usuario"
   LINKEDIN_URL: "",
-  // Enlace para agendar el diagnóstico (Calendly, Cal.com, etc.). Vacío = se oculta el botón.
+  // https://www.linkedin.com/in/florencia-acu%C3%B1a-cecchin-111192288/
   BOOKING_URL: "",
   // Mail público de contacto. Vacío = se oculta.
   CONTACT_EMAIL: "",
