@@ -127,12 +127,11 @@
       try {
         const res = await fetch(cfg.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/contact_requests", {
           method: "POST",
-          headers: {
+          headers: Object.assign({
             "Content-Type": "application/json",
             apikey: cfg.SUPABASE_ANON_KEY,
-            Authorization: "Bearer " + cfg.SUPABASE_ANON_KEY,
             Prefer: "return=minimal"
-          },
+          }, /^eyJ/.test(cfg.SUPABASE_ANON_KEY) ? { Authorization: "Bearer " + cfg.SUPABASE_ANON_KEY } : {}),
           body: JSON.stringify({
             name, email,
             company: company || null,
