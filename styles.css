@@ -250,3 +250,13 @@ button,input,textarea{font:inherit;color:inherit}
   .js .rv,.js .hero__title .ln>span{opacity:1;transform:none}
   .idea__text .w{opacity:1}
 }
+
+/* ---------- Ajustes: stack, LinkedIn en la barra, foto ---------- */
+.nav__in .nav__li{margin-left:auto;margin-right:-6px}
+.nav__links{margin:0 auto}
+.tag--st{background:var(--rosa)}
+.stack__label{color:var(--tinta);margin:8px 0 -6px}
+.portrait img{object-position:50% 20%}
+.portrait{background:#000}
+@media (max-width:1020px){.nav__in .nav__li{margin-left:auto}}
+@media (max-width:520px){.nav__in .nav__li{display:none}}
