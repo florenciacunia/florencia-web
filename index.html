@@ -3,32 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Florencia Acuña · Automatización con IA para pymes</title>
-  <meta name="description" content="Soy Florencia Acuña, licenciada en Administración. Automatizo tareas administrativas repetitivas de pymes con IA: facturas de proveedores, pedidos, cobranzas y reportes.">
+  <title>Florencia Acuña · Estrategia y automatización con IA para pymes</title>
+  <meta name="description" content="Soy Florencia Acuña, licenciada en Administración. Ayudo a pymes a definir su estrategia y a ejecutarla con IA, tanto en lo que ve el cliente como en la administración interna.">
   <meta name="theme-color" content="#F9C4D0">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Florencia Acuña · Automatización con IA para pymes">
-  <meta property="og:description" content="Menos carga manual, más control de tu administración. Diagnóstico gratuito de 30 minutos.">
+  <meta property="og:title" content="Florencia Acuña · Estrategia y automatización con IA para pymes">
+  <meta property="og:description" content="La estrategia sin ejecución es un sueño. Diagnóstico gratuito de 30 minutos.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B8102D'/%3E%3Cpath d='M22 46V18h22v7H30v4h12v7H30v10z' fill='%23FFF7F5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.className="js"</script>
 </head>
 <body>
   <a class="skip" href="#contenido">Ir al contenido</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav" id="top">
     <div class="wrap nav__in">
       <a class="brand" href="#top" aria-label="Florencia Acuña, inicio">Florencia Acuña</a>
       <nav class="nav__links" aria-label="Secciones">
+        <a href="#enfoque">Enfoque</a>
+        <a href="#metodo">Método</a>
+        <a href="#casos">Casos</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#ayuda">Cómo te ayudo</a>
-        <a href="#proceso">Cómo trabajo</a>
-        <a href="#conocimientos">Conocimientos</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-      <a class="btn btn--line btn--sm" href="#contacto">Hablemos</a>
+      <a class="btn btn--sm" href="#contacto">Hablemos</a>
     </div>
   </header>
 
@@ -36,17 +39,23 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="wrap hero__in">
+      <span class="conf c1" data-speed="-.08" aria-hidden="true"><i></i></span>
+      <span class="conf c2" data-speed=".12" aria-hidden="true"><i></i></span>
+      <span class="conf c3" data-speed="-.14" aria-hidden="true"><i></i></span>
+      <span class="conf c4" data-speed=".1" aria-hidden="true"><i></i></span>
+      <span class="conf c5" data-speed="-.06" aria-hidden="true"><i></i></span>
+
+      <div class="hero__in wrap">
         <p class="tag from-li" id="from-li" hidden>Hola, te veo llegar desde LinkedIn. Bienvenida/o.</p>
 
-        <h1 class="hero__title">
-          <span class="l1">Tu administración,</span>
-          <span class="l2">sin tanta carga</span>
-          <span class="l1">manual.</span>
+        <h1 class="hero__title display">
+          <span class="ln" style="--d:0"><span>La estrategia</span></span>
+          <span class="ln l2" style="--d:1"><span>sin ejecución</span></span>
+          <span class="ln" style="--d:2"><span>es un sueño.</span></span>
         </h1>
 
-        <div class="hero__body">
-          <p class="lead">Soy Florencia, licenciada en Administración. Diseño automatizaciones con IA para pymes: facturas de proveedores, pedidos, cobranzas y reportes, siempre con una persona que revisa lo dudoso.</p>
+        <div class="hero__body rv" style="--d:4">
+          <p class="lead">Soy Florencia, licenciada en Administración. Ayudo a pymes a definir hacia dónde van y a llevarlo a la práctica con IA, tanto en lo que ve tu cliente como en la administración que lo sostiene.</p>
           <div class="cta-row">
             <a class="btn" href="#contacto" data-booking>Agendar diagnóstico gratis</a>
             <a class="btn btn--line" href="#" data-linkedin target="_blank" rel="noopener">Ver mi LinkedIn</a>
@@ -57,29 +66,24 @@
         <!-- Mascota original: una factura con ganas de ayudar -->
         <svg class="mascot" viewBox="0 0 250 290" role="img" aria-label="Dibujo de una factura sonriente con brazos y piernas, saludando">
           <g transform="rotate(-5 115 150)" stroke="#2B0810" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <!-- piernas -->
             <path d="M84 226v28M146 226v28" fill="none"/>
             <ellipse cx="74" cy="262" rx="20" ry="9" fill="#B8102D"/>
             <ellipse cx="156" cy="262" rx="20" ry="9" fill="#B8102D"/>
-            <!-- brazo que saluda -->
-            <path d="M44 138C18 128 8 104 18 80" fill="none"/>
-            <circle cx="18" cy="76" r="10" fill="#FFF7F5"/>
-            <!-- brazo con lapicera -->
+            <g class="m-arm">
+              <path d="M44 138C18 128 8 104 18 80" fill="none"/>
+              <circle cx="18" cy="76" r="10" fill="#FFF7F5"/>
+            </g>
             <path d="M186 146c22 6 30 24 26 44" fill="none"/>
             <circle cx="212" cy="194" r="10" fill="#FFF7F5"/>
             <path d="M218 204l14 22" fill="none" stroke="#B8102D" stroke-width="6"/>
-            <!-- hoja -->
             <path d="M44 28h112l32 32v166H44z" fill="#FFF7F5"/>
             <path d="M156 28v32h32" fill="#FDE6EB"/>
-            <!-- cara -->
-            <circle cx="92" cy="104" r="6.5" fill="#2B0810" stroke="none"/>
-            <circle cx="138" cy="104" r="6.5" fill="#2B0810" stroke="none"/>
+            <circle class="m-eye" cx="92" cy="104" r="6.5" fill="#2B0810" stroke="none"/>
+            <circle class="m-eye" cx="138" cy="104" r="6.5" fill="#2B0810" stroke="none"/>
             <circle cx="76" cy="124" r="8" fill="#EE7F9B" stroke="none"/>
             <circle cx="154" cy="124" r="8" fill="#EE7F9B" stroke="none"/>
             <path d="M99 126q16 16 32 0" fill="none"/>
-            <!-- renglones -->
             <path d="M68 166h94M68 184h66" fill="none"/>
-            <!-- sello -->
             <g transform="rotate(-12 146 204)">
               <circle cx="146" cy="204" r="22" fill="#B8102D"/>
               <text x="146" y="211" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#FFF7F5" stroke="none">OK</text>
@@ -89,23 +93,179 @@
       </div>
     </section>
 
-    <!-- DEMO -->
-    <section class="sec sec--tight" aria-labelledby="demo-title">
+    <!-- MARQUESINA -->
+    <div class="marq" aria-hidden="true">
+      <div class="marq__track">
+        <span>Estrategia</span><span>Ejecución</span><span>Front office</span><span>Back office</span><span>IA aplicada</span><span>Pymes</span>
+        <span>Estrategia</span><span>Ejecución</span><span>Front office</span><span>Back office</span><span>IA aplicada</span><span>Pymes</span>
+        <span>Estrategia</span><span>Ejecución</span><span>Front office</span><span>Back office</span><span>IA aplicada</span><span>Pymes</span>
+        <span>Estrategia</span><span>Ejecución</span><span>Front office</span><span>Back office</span><span>IA aplicada</span><span>Pymes</span>
+      </div>
+    </div>
+
+    <!-- ENFOQUE: la idea -->
+    <section class="sec sec--bordo" id="enfoque">
       <div class="wrap">
-        <div class="block demo" id="demo">
+        <p class="tag tag--dark sec__eyebrow rv" style="background:transparent;color:var(--crema);border-color:var(--crema)">Mi enfoque</p>
+        <p class="idea__text display" id="idea" data-hl="sueño,ruido,las dos">Una estrategia sin ejecución es un sueño. Una ejecución sin estrategia es ruido. Yo trabajo en las dos.</p>
+        <p class="idea__aside rv">La IA no es una herramienta más para tu administración: cambia cómo se organiza toda la empresa. Por eso empiezo por la estrategia, qué querés lograr, y recién después elijo dónde aplicarla.</p>
+      </div>
+    </section>
+
+    <!-- FRONT / BACK -->
+    <section class="sec sec--claro" id="frente-fondo">
+      <div class="wrap">
+        <div class="fb__head">
+          <h2 class="display h-lg rv">La IA impacta en el <span class="accent">front</span> y en el <span class="accent">back</span> de tu empresa</h2>
+          <p class="lead rv" style="--d:1">Lo que ve tu cliente y lo que sostiene tu operación son dos caras de la misma estrategia. Elegí una para ver ejemplos de lo que se puede hacer.</p>
+        </div>
+
+        <div class="tabs rv" role="tablist" aria-label="Zona de la organización">
+          <button class="tab" role="tab" id="tab-front" aria-selected="true" aria-controls="panel-front" type="button">Front office <small>lo que ve tu cliente</small></button>
+          <button class="tab" role="tab" id="tab-back" aria-selected="false" aria-controls="panel-back" tabindex="-1" type="button">Back office <small>lo que sostiene tu empresa</small></button>
+        </div>
+
+        <div class="fb__panel" role="tabpanel" id="panel-front" aria-labelledby="tab-front">
+          <article class="card card--crema" style="--i:0"><p class="tag">Consultas</p><h3>Mensajes a pedidos</h3><p>Los mensajes de WhatsApp y mail se convierten en pedidos ordenados, con revisión humana de lo dudoso.</p></article>
+          <article class="card card--rosa" style="--i:1"><p class="tag">Ventas</p><h3>Presupuestos en borrador</h3><p>Borradores listos para que los revises y los envíes, con tus precios y condiciones.</p></article>
+          <article class="card card--crema" style="--i:2"><p class="tag">Clientes</p><h3>Seguimiento y cobranza</h3><p>Recordatorios de vencimiento y avisos amables, sin perseguir a nadie a mano.</p></article>
+          <article class="card card--cereza" style="--i:3"><p class="tag">Marca</p><h3>Una voz clara</h3><p>Definir cómo comunicás y armar borradores de contenido que suenen a tu empresa.</p></article>
+        </div>
+        <div class="fb__panel" role="tabpanel" id="panel-back" aria-labelledby="tab-back" hidden>
+          <article class="card card--crema" style="--i:0"><p class="tag">Cuentas a pagar</p><h3>Facturas de proveedores</h3><p>Llegan en PDF por mail y quedan cargadas en tu planilla, con los vencimientos avisados.</p></article>
+          <article class="card card--rosa" style="--i:1"><p class="tag">Tesorería</p><h3>Conciliación bancaria</h3><p>Cruzo el extracto contra tus facturas y te marco solo las diferencias.</p></article>
+          <article class="card card--crema" style="--i:2"><p class="tag">Gestión</p><h3>Reporte de los lunes</h3><p>Deuda con proveedores, vencimientos y caja, en tu mail o WhatsApp.</p></article>
+          <article class="card card--cereza" style="--i:3"><p class="tag">Procesos</p><h3>Orden antes que código</h3><p>Reviso cómo se hace cada tarea hoy y la ordeno antes de automatizarla.</p></article>
+        </div>
+
+        <p class="fb__tie rv"><b>Los une la estrategia: qué automatizar, por qué y en qué orden</b></p>
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section class="sec sec--stage" id="metodo">
+      <div class="wrap">
+        <p class="tag sec__eyebrow rv">Cómo trabajamos</p>
+        <h2 class="display h-lg sec__title rv">De la estrategia <span class="accent">a la práctica</span></h2>
+        <ol class="method">
+          <li class="mstep rv">
+            <span class="mstep__n" aria-hidden="true">01</span>
+            <h3>Estrategia</h3>
+            <div>
+              <ul><li>Dónde está hoy tu pyme y a dónde querés llegar.</li><li>Qué procesos mueven el resultado, del lado del cliente y de la administración.</li></ul>
+              <p class="mstep__out">Entrega: mapa de procesos priorizado</p>
+            </div>
+          </li>
+          <li class="mstep rv" style="--d:1">
+            <span class="mstep__n" aria-hidden="true">02</span>
+            <h3>IA aplicada</h3>
+            <div>
+              <ul><li>Qué tareas conviene resolver con IA y cuáles no.</li><li>Qué revisa siempre una persona antes de aplicarse.</li></ul>
+              <p class="mstep__out">Entrega: propuesta cerrada con alcance, plazo y precio</p>
+            </div>
+          </li>
+          <li class="mstep rv" style="--d:2">
+            <span class="mstep__n" aria-hidden="true">03</span>
+            <h3>Ejecución</h3>
+            <div>
+              <ul><li>Lo construyo y lo probamos con tus datos reales.</li><li>Medimos horas ahorradas y un abono mensual cubre el mantenimiento.</li></ul>
+              <p class="mstep__out">Entrega: funcionando, con cuentas y accesos a tu nombre</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CASOS -->
+    <section class="sec sec--cereza" id="casos">
+      <div class="wrap">
+        <div class="cases__bar">
+          <div>
+            <p class="tag tag--dark sec__eyebrow rv" style="background:transparent;color:var(--crema);border-color:var(--crema)">Qué se puede hacer</p>
+            <h2 class="display h-lg rv">Casos de ejemplo</h2>
+            <p class="note rv">Escenarios ilustrativos, no son clientes. Mis primeros casos reales se suman acá.</p>
+          </div>
+          <div class="cases__ctrl">
+            <button class="arrow" id="prev" type="button" aria-label="Caso anterior">←</button>
+            <button class="arrow" id="next" type="button" aria-label="Caso siguiente">→</button>
+          </div>
+        </div>
+
+        <ul class="rail" id="rail" tabindex="0" aria-label="Casos de ejemplo, deslizá para ver más">
+          <li class="case">
+            <span class="tag">Back office</span>
+            <h3>Facturas de proveedores</h3>
+            <dl>
+              <div><dt>Situación</dt><dd>Las facturas llegan por mail en PDF y alguien las carga una por una.</dd></div>
+              <div><dt>Se automatiza</dt><dd>Lectura del PDF, carga en la planilla y aviso de vencimiento.</dd></div>
+              <div><dt>Revisa una persona</dt><dd>Lo que no coincide con la orden de compra.</dd></div>
+              <div><dt>Cómo se mide</dt><dd>Horas por semana antes y después.</dd></div>
+            </dl>
+          </li>
+          <li class="case">
+            <span class="tag">Front office</span>
+            <h3>Pedidos por WhatsApp</h3>
+            <dl>
+              <div><dt>Situación</dt><dd>Los pedidos llegan en texto libre y se pasan a mano.</dd></div>
+              <div><dt>Se automatiza</dt><dd>El mensaje se convierte en un pedido ordenado.</dd></div>
+              <div><dt>Revisa una persona</dt><dd>Mensajes ambiguos o con productos que no existen.</dd></div>
+              <div><dt>Cómo se mide</dt><dd>Pedidos con error y tiempo de carga.</dd></div>
+            </dl>
+          </li>
+          <li class="case">
+            <span class="tag">Front office</span>
+            <h3>Cobranzas</h3>
+            <dl>
+              <div><dt>Situación</dt><dd>Hay que acordarse de a quién reclamarle y cuándo.</dd></div>
+              <div><dt>Se automatiza</dt><dd>Recordatorios de vencimiento y registro de pagos recibidos.</dd></div>
+              <div><dt>Revisa una persona</dt><dd>Clientes con deuda atrasada o situaciones especiales.</dd></div>
+              <div><dt>Cómo se mide</dt><dd>Días promedio de cobro.</dd></div>
+            </dl>
+          </li>
+          <li class="case">
+            <span class="tag">Back office</span>
+            <h3>Conciliación bancaria</h3>
+            <dl>
+              <div><dt>Situación</dt><dd>Cruzar el extracto con las facturas lleva horas a fin de mes.</dd></div>
+              <div><dt>Se automatiza</dt><dd>El cruce de movimientos y facturas.</dd></div>
+              <div><dt>Revisa una persona</dt><dd>Solo las diferencias.</dd></div>
+              <div><dt>Cómo se mide</dt><dd>Horas de cierre mensual.</dd></div>
+            </dl>
+          </li>
+          <li class="case">
+            <span class="tag">Dirección</span>
+            <h3>Reporte de los lunes</h3>
+            <dl>
+              <div><dt>Situación</dt><dd>Los números están dispersos y nadie los junta a tiempo.</dd></div>
+              <div><dt>Se automatiza</dt><dd>Un resumen semanal de deuda, vencimientos y caja.</dd></div>
+              <div><dt>Revisa una persona</dt><dd>Vos, para decidir con eso.</dd></div>
+              <div><dt>Cómo se mide</dt><dd>Decisiones tomadas con datos al día.</dd></div>
+            </dl>
+          </li>
+          <li class="case case--empty">
+            <span class="tag" style="background:transparent;color:var(--crema);border-color:var(--crema)">Caso real n.º 1</span>
+            <h3>Puede ser el tuyo</h3>
+            <p>Estoy sumando mis primeros casos. El diagnóstico es gratis y sin compromiso.</p>
+            <a class="btn" href="#contacto">Contame tu caso</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="sec sec--claro" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="block demo rv" id="demo">
           <div class="demo__head">
-            <h2 id="demo-title" class="h-sm">Una factura llega por mail y queda cargada sola</h2>
-            <p class="tag tag--light">Demo con datos de ejemplo</p>
+            <h2 id="demo-title" class="display h-lg">Mirá uno funcionando</h2>
+            <p class="tag" style="background:transparent;color:var(--crema);border-color:var(--crema)">Demo con datos de ejemplo</p>
           </div>
 
           <div class="demo__grid">
             <div class="demo__col">
               <p class="mono-label">Llega por mail</p>
               <div class="paper">
-                <div class="paper__head">
-                  <b>Factura A</b>
-                  <span>Factura_4217.pdf</span>
-                </div>
+                <div class="paper__head"><b>Factura A</b><span>Factura_4217.pdf</span></div>
                 <dl class="paper__rows">
                   <div data-src="0"><dt>Proveedor</dt><dd>Repuestos del Sur S.A.</dd></div>
                   <div data-src="1"><dt>N.º</dt><dd>0004-00004217</dd></div>
@@ -122,16 +282,9 @@
             <div class="demo__col">
               <p class="mono-label">Queda cargada en tu planilla</p>
               <div class="sheet" role="table" aria-label="Planilla de cuentas a pagar">
-                <div class="sheet__row sheet__row--head" role="row">
-                  <span role="columnheader">Proveedor</span><span role="columnheader">N.º</span><span role="columnheader">Total</span><span role="columnheader">Vence</span>
-                </div>
-                <div class="sheet__row is-old" role="row">
-                  <span>Lubricantes Norte</span><span>0002-0981</span><span>$ 312.000</span><span>08/10</span>
-                </div>
-                <div class="sheet__row is-flag" role="row">
-                  <span>Taller Andina</span><span>0001-5530</span><span>$ 96.400</span><span>15/10</span>
-                  <em>Para revisar: no coincide con la orden de compra</em>
-                </div>
+                <div class="sheet__row sheet__row--head" role="row"><span role="columnheader">Proveedor</span><span role="columnheader">N.º</span><span role="columnheader">Total</span><span role="columnheader">Vence</span></div>
+                <div class="sheet__row is-old" role="row"><span>Lubricantes Norte</span><span>0002-0981</span><span>$ 312.000</span><span>08/10</span></div>
+                <div class="sheet__row is-flag" role="row"><span>Taller Andina</span><span>0001-5530</span><span>$ 96.400</span><span>15/10</span><em>Para revisar: no coincide con la orden de compra</em></div>
                 <div class="sheet__row is-new" role="row">
                   <span data-cell="0" data-text="Repuestos del Sur S.A."></span>
                   <span data-cell="1" data-text="0004-4217"></span>
@@ -149,133 +302,62 @@
     </section>
 
     <!-- SOBRE MI -->
-    <section class="sec" id="sobre-mi">
+    <section class="sec sec--stage" id="sobre-mi">
       <div class="wrap">
-        <h2 class="h-sm sec__title">Vengo de adentro de la administración</h2>
+        <h2 class="display h-lg sec__title rv">Vengo de adentro de la administración</h2>
         <div class="about">
-          <figure class="portrait">
+          <figure class="portrait rv">
             <div class="portrait__ph" aria-hidden="true"><span>FA</span></div>
             <img src="assets/florencia.jpg" alt="Florencia Acuña" width="640" height="800" loading="lazy" onerror="this.remove()">
           </figure>
-          <div class="card card--crema about__copy">
+          <div class="card card--crema about__copy rv" style="--d:1">
             <p>Me recibí de Licenciada en Administración en la UNLP en 2025. Entre 2020 y 2025 fundé y dirigí mi propio negocio, así que sé lo que es decidir con poco tiempo y pocos recursos.</p>
-            <p>Hoy llevo cuentas a pagar en el sector automotriz: cargo facturas, hablo con proveedores y conozco las excepciones que ningún manual cuenta. Esa es la tarea que más se repite en una pyme, y la que mejor sé automatizar.</p>
-            <p>Por eso no te ofrezco «IA» en general. Te ofrezco sacarte de encima lo que se come tus semanas, y mostrarte cuántas horas recuperás.</p>
-            <p class="tag">Viedma, Río Negro · trabajo en remoto</p>
+            <p>Hoy llevo cuentas a pagar en el sector automotriz: cargo facturas, hablo con proveedores y conozco las excepciones que ningún manual cuenta.</p>
+            <p>Por eso pienso la IA desde la estrategia de la organización, no desde la herramienta: primero qué querés lograr, después cómo se ejecuta.</p>
+            <div class="chips">
+              <span class="tag">Lic. en Administración · UNLP 2025</span>
+              <span class="tag">Fundadora · 2020–2025</span>
+              <span class="tag">Cuentas a pagar</span>
+              <span class="tag">Trabajo en remoto</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COMO TE AYUDO -->
-    <section class="sec" id="ayuda">
+    <!-- POR QUE -->
+    <section class="sec sec--claro" id="porque">
       <div class="wrap">
-        <h2 class="h-sm sec__title">Qué puedo sacarte de encima</h2>
-        <ul class="tasks">
-          <li class="card card--crema">
-            <p class="tag">n8n · IA · Supabase</p>
-            <h3>Facturas de proveedores</h3>
-            <p>Llegan por mail en PDF y quedan cargadas en tu planilla o sistema, con los vencimientos avisados.</p>
-          </li>
-          <li class="card card--rosa">
-            <p class="tag">n8n · WhatsApp · IA</p>
-            <h3>Pedidos por WhatsApp</h3>
-            <p>El mensaje en texto libre se convierte en un pedido ordenado. Lo dudoso pasa por una persona antes de tocar nada.</p>
-          </li>
-          <li class="card card--crema">
-            <p class="tag">n8n · mail · WhatsApp</p>
-            <h3>Cobranzas</h3>
-            <p>Recordatorios de vencimiento y registro de pagos recibidos, sin perseguir a nadie a mano.</p>
-          </li>
-          <li class="card card--crema">
-            <p class="tag">Python · SQL</p>
-            <h3>Conciliación bancaria</h3>
-            <p>Cruzo el extracto contra tus facturas y te marco solo las diferencias.</p>
-          </li>
-          <li class="card card--cereza">
-            <p class="tag">Supabase · n8n</p>
-            <h3>Reporte semanal</h3>
-            <p>Deuda con proveedores, vencimientos y caja, en tu mail o WhatsApp cada lunes.</p>
-          </li>
-          <li class="card card--claro">
-            <h3>¿Tu tarea no está en la lista?</h3>
-            <p>Si se repite y sigue reglas, probablemente se puede automatizar. Lo vemos en el diagnóstico.</p>
-          </li>
+        <h2 class="display h-lg sec__title rv">Cómo cuido tu empresa</h2>
+        <ul class="why">
+          <li class="card card--crema rv"><h3>Primero ordeno, después automatizo</h3><p>Automatizar un proceso desordenado solo acelera el desorden.</p></li>
+          <li class="card card--rosa rv" style="--d:1"><h3>Sobre lo que ya usás</h3><p>Planillas, mail, WhatsApp y tu sistema de gestión. No te pido cambiar de herramientas.</p></li>
+          <li class="card card--crema rv" style="--d:2"><h3>Una persona decide</h3><p>Lo dudoso pasa por revisión humana. La IA propone, vos decidís.</p></li>
+          <li class="card card--cereza rv" style="--d:3"><h3>Todo a tu nombre</h3><p>Las cuentas, los accesos y el código son tuyos.</p></li>
         </ul>
       </div>
     </section>
 
-    <!-- COMO TRABAJO -->
-    <section class="sec" id="proceso">
+    <!-- PREGUNTAS -->
+    <section class="sec sec--stage" id="preguntas">
       <div class="wrap">
-        <h2 class="h-sm sec__title">Cómo trabajamos juntos</h2>
-        <div class="block block--proceso">
-          <ol class="steps">
-            <li>
-              <span class="steps__n" aria-hidden="true">1</span>
-              <h3>Diagnóstico de 30 minutos</h3>
-              <p>Me contás qué tarea te come más tiempo. Salís con una lista ordenada de qué automatizar primero.</p>
-            </li>
-            <li>
-              <span class="steps__n" aria-hidden="true">2</span>
-              <h3>Propuesta cerrada</h3>
-              <p>Alcance, plazo y precio antes de empezar, con una estimación de las horas que vas a ahorrar.</p>
-            </li>
-            <li>
-              <span class="steps__n" aria-hidden="true">3</span>
-              <h3>Implementación y abono</h3>
-              <p>Lo construyo, lo probamos con tus datos reales y queda funcionando. Un abono mensual cubre el mantenimiento.</p>
-            </li>
-          </ol>
-          <div class="rules">
-            <p class="card card--crema"><b>Todo a tu nombre.</b> Las cuentas, los accesos y el código son tuyos.</p>
-            <p class="card card--crema"><b>Una persona decide.</b> Lo dudoso pasa por revisión humana antes de aplicarse.</p>
-            <p class="card card--crema"><b>Se mide.</b> Te muestro las horas ahorradas, no solo que «funciona».</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONOCIMIENTOS -->
-    <section class="sec" id="conocimientos">
-      <div class="wrap">
-        <h2 class="h-sm sec__title">Con qué trabajo</h2>
-        <div class="skills">
-          <div class="card card--crema">
-            <p class="tag">Uso a diario</p>
-            <ul class="skills__list">
-              <li><b>n8n</b><span>Flujos de trabajo y agentes con IA que conectan tus mails, planillas y WhatsApp.</span></li>
-              <li><b>Supabase</b><span>Base de datos, usuarios y reglas de acceso para guardar y consultar tu información.</span></li>
-              <li><b>Vercel</b><span>Publicación de sitios y paneles web.</span></li>
-              <li><b>GitHub</b><span>Versionado del código, para que nada se pierda y todo sea tuyo.</span></li>
-            </ul>
-          </div>
-          <div class="skills__stack">
-            <div class="card card--rosa">
-              <p class="tag">Profundizando</p>
-              <ul class="skills__list">
-                <li><b>Python</b><span>Limpieza de datos y lectura de PDFs.</span></li>
-                <li><b>SQL</b><span>Consultas y reportes sobre datos reales de la operación.</span></li>
-              </ul>
-            </div>
-            <div class="card card--crema">
-              <p class="tag">Desde la administración</p>
-              <ul class="skills__list">
-                <li><b>Cuentas a pagar</b><span>Circuito de facturas, vencimientos y relación con proveedores.</span></li>
-                <li><b>Gestión de un negocio propio</b><span>Cinco años al frente de mi emprendimiento.</span></li>
-              </ul>
-            </div>
-          </div>
+        <h2 class="display h-lg sec__title rv">Preguntas frecuentes</h2>
+        <div class="faq">
+          <details class="rv"><summary>¿Qué significa aplicar IA a la estrategia?</summary><p>Que antes de automatizar definimos qué querés lograr con tu empresa y qué procesos lo mueven. La IA se aplica donde más aporta a ese objetivo, no donde está de moda.</p></details>
+          <details class="rv"><summary>¿Tengo que cambiar mis sistemas o mis planillas?</summary><p>No. Trabajo sobre lo que ya usás. Si en la reunión inicial aparece algo que conviene cambiar, te lo cuento y decidís vos.</p></details>
+          <details class="rv"><summary>¿Cuánto cuesta?</summary><p>Depende del proceso. Después de la reunión inicial recibís una propuesta cerrada con alcance, plazo y precio, antes de empezar. Luego hay un abono mensual de mantenimiento.</p></details>
+          <details class="rv"><summary>¿Qué pasa con mis datos?</summary><p>Las cuentas y los accesos quedan a tu nombre. Vos decidís qué información se usa y quién puede verla.</p></details>
+          <details class="rv"><summary>¿Y si la IA se equivoca?</summary><p>Por eso lo dudoso pasa por una persona antes de aplicarse. Cada caso que el sistema no puede resolver con seguridad queda marcado para revisar, como en la demo.</p></details>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="sec" id="contacto">
+    <section class="sec sec--bordo" id="contacto">
       <div class="wrap">
-        <h2 class="h-sm sec__title">Contame qué tarea querés sacarte de encima</h2>
+        <h2 class="display h-lg sec__title rv">Contame <span class="accent-r">qué querés lograr</span></h2>
         <div class="contact">
-          <div class="contact__copy">
+          <div class="contact__copy rv">
             <p class="lead">Respondo personalmente, normalmente en un día hábil. Si preferís, agendá directo el diagnóstico o escribime por LinkedIn.</p>
             <ul class="links">
               <li><a href="#" data-booking-link hidden>Agendar diagnóstico</a></li>
@@ -284,26 +366,12 @@
             </ul>
           </div>
 
-          <form class="card card--crema form" id="form" novalidate>
-            <div class="field">
-              <label for="f-name">Nombre</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="120">
-            </div>
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
-            </div>
-            <div class="field">
-              <label for="f-company">Empresa <span class="opt">(opcional)</span></label>
-              <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="160">
-            </div>
-            <div class="field">
-              <label for="f-message">¿Qué tarea repetitiva querés sacarte de encima?</label>
-              <textarea id="f-message" name="message" rows="5" required minlength="10" maxlength="2000"></textarea>
-            </div>
-            <div class="hp" aria-hidden="true">
-              <label>No completar <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-            </div>
+          <form class="card card--crema form rv" style="--d:1" id="form" novalidate>
+            <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="120"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+            <div class="field"><label for="f-company">Empresa <span class="opt">(opcional)</span></label><input id="f-company" name="company" type="text" autocomplete="organization" maxlength="160"></div>
+            <div class="field"><label for="f-message">¿Qué querés lograr o qué tarea querés sacarte de encima?</label><textarea id="f-message" name="message" rows="5" required minlength="10" maxlength="2000"></textarea></div>
+            <div class="hp" aria-hidden="true"><label>No completar <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <button class="btn" type="submit" id="submit">Enviar mensaje</button>
             <p class="form__status" id="status" role="status" aria-live="polite"></p>
           </form>
@@ -313,9 +381,9 @@
   </main>
 
   <footer class="foot">
-    <div class="wrap foot__in">
-      <p>© 2026 Florencia Acuña · Viedma, Río Negro</p>
-      <a href="#top">Volver arriba</a>
+    <div class="wrap">
+      <p class="foot__word display" aria-hidden="true">Florencia Acuña</p>
+      <div class="foot__in"><p>© 2026 Florencia Acuña</p><a href="#top">Volver arriba</a></div>
     </div>
   </footer>
 
