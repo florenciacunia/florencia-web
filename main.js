@@ -24,6 +24,104 @@
     if (fromLi) $("#from-li").hidden = false;
   } catch (_) { /* sin efecto */ }
 
+  /* ---------- Movimiento ---------- */
+  requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("ready")));
+
+  // Revelado al scrollear
+  const rv = $$(".rv");
+  if (reduce || !("IntersectionObserver" in window)) rv.forEach((e) => e.classList.add("in"));
+  else {
+    const rio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); rio.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    rv.forEach((e) => rio.observe(e));
+  }
+
+  // Texto de "Mi enfoque": cada palabra se enciende al scrollear
+  const idea = $("#idea");
+  let words = [];
+  if (idea) {
+    const hl = (idea.dataset.hl || "").split(",").map((s) => s.trim().toLowerCase());
+    const txt = idea.textContent.trim().split(/\s+/);
+    idea.setAttribute("aria-label", idea.textContent.trim());
+    idea.textContent = "";
+    txt.forEach((w, i) => {
+      const s = document.createElement("span");
+      s.className = "w" + (hl.some((h) => h.split(" ")[0] === w.toLowerCase().replace(/[.,]/g, "")) ? " hl" : "");
+      s.setAttribute("aria-hidden", "true");
+      s.textContent = w;
+      idea.append(s, i < txt.length - 1 ? " " : "");
+      words.push(s);
+    });
+  }
+
+  // Scroll: barra de progreso, navegación que se esconde, paralaje, palabras
+  const bar = $("#progress");
+  const nav = $(".nav");
+  const conf = $$(".conf");
+  let lastY = window.scrollY, ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY, vh = window.innerHeight;
+    const max = document.documentElement.scrollHeight - vh;
+    if (bar) bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, y / max) : 0) + ")";
+    if (nav) nav.classList.toggle("is-hidden", y > lastY && y > 240);
+    lastY = y;
+    if (!reduce) conf.forEach((c) => { c.style.transform = "translateY(" + (y * parseFloat(c.dataset.speed || 0)) + "px)"; });
+    if (words.length) {
+      words.forEach((w) => {
+        const r = w.getBoundingClientRect();
+        w.classList.toggle("on", reduce || r.top < vh * 0.72);
+      });
+    }
+    ticking = false;
+  };
+  window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  // La mascota te sigue con la mirada
+  const eyes = $$(".m-eye");
+  if (eyes.length && !reduce) {
+    window.addEventListener("pointermove", (e) => {
+      const m = $(".mascot").getBoundingClientRect();
+      const dx = e.clientX - (m.left + m.width / 2), dy = e.clientY - (m.top + m.height * 0.4);
+      const d = Math.hypot(dx, dy) || 1, k = Math.min(3.5, d / 60);
+      eyes.forEach((el) => { el.style.transform = "translate(" + (dx / d) * k + "px," + (dy / d) * k + "px)"; });
+    }, { passive: true });
+  }
+
+  // Pestañas front / back
+  const tabs = $$('[role="tab"]');
+  const selectTab = (t) => {
+    tabs.forEach((x) => {
+      const on = x === t;
+      x.setAttribute("aria-selected", on);
+      x.tabIndex = on ? 0 : -1;
+      const p = document.getElementById(x.getAttribute("aria-controls"));
+      if (p) p.hidden = !on;
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => selectTab(t));
+    t.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      selectTab(n); n.focus();
+    });
+  });
+
+  // Carrusel de casos
+  const rail = $("#rail");
+  if (rail) {
+    const step = () => (rail.querySelector(".case").getBoundingClientRect().width + 14);
+    $("#next").addEventListener("click", () => rail.scrollBy({ left: step(), behavior: "smooth" }));
+    $("#prev").addEventListener("click", () => rail.scrollBy({ left: -step(), behavior: "smooth" }));
+    rail.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") rail.scrollBy({ left: step(), behavior: "smooth" });
+      if (e.key === "ArrowLeft") rail.scrollBy({ left: -step(), behavior: "smooth" });
+    });
+  }
+
   /* ---------- Demo: factura → planilla ---------- */
   const demo = $("#demo");
   if (demo) {
