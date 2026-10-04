@@ -260,3 +260,27 @@ button,input,textarea{font:inherit;color:inherit}
 .portrait{background:#000}
 @media (max-width:1020px){.nav__in .nav__li{margin-left:auto}}
 @media (max-width:520px){.nav__in .nav__li{display:none}}
+
+/* ---------- Orden antes que código + servicios ---------- */
+.orden__text{font-size:clamp(1.4rem,3.2vw,2.8rem);font-weight:700;line-height:1.2;max-width:26ch;margin-top:clamp(20px,3vw,40px)}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.svc{border:var(--line);border-radius:var(--r-card);background:var(--crema);transition:transform .3s var(--ease)}
+.svc--rosa{background:var(--rosa)}
+.svc:hover{transform:translateY(-4px)}
+.svc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:clamp(18px,2.2vw,28px)}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary::after{content:"+";font-size:2rem;line-height:1;transition:transform .3s var(--ease);color:var(--cereza);font-weight:400}
+.svc[open] summary::after{transform:rotate(45deg)}
+.svc[open]{background:var(--cereza);color:var(--crema)}
+.svc[open] summary::after{color:var(--crema)}
+.svc__n{font-weight:900;font-stretch:62%;font-size:2.4rem;line-height:1}
+.svc__t{font-weight:900;font-stretch:78%;text-transform:uppercase;font-size:clamp(1.3rem,1.9vw,1.7rem);line-height:1}
+.svc__b{padding:0 clamp(18px,2.2vw,28px) clamp(18px,2.2vw,28px);display:grid;gap:14px;animation:pop .4s var(--ease)}
+.svc__b ul{display:grid;gap:6px}
+.svc__b li{padding-left:20px;position:relative}
+.svc__b li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:currentColor}
+.svc__b .btn{justify-self:start}
+@media (max-width:1020px){.svcs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.svcs{grid-template-columns:1fr}}
+.foot__word{font-size:clamp(2.2rem,11.2vw,11.5rem)}
+.h-xl,.h-lg{line-height:.94}
