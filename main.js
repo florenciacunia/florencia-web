@@ -110,6 +110,11 @@
     });
   });
 
+
+  // Servicios: se abre uno a la vez
+  const svcs = $$("#svcs details");
+  svcs.forEach((d) => d.addEventListener("toggle", () => { if (d.open) svcs.forEach((o) => { if (o !== d) o.open = false; }); }));
+
   // Carrusel de casos
   const rail = $("#rail");
   if (rail) {
